@@ -115,7 +115,7 @@ namespace NitroxLauncher
 
             lastFindSubnauticaTask = Task.Factory.StartNew(() =>
             {
-                PirateDetection.TriggerOnDirectory(path);
+                //PirateDetection.TriggerOnDirectory(path);
 
                 if (!FileSystem.Instance.IsWritable(Directory.GetCurrentDirectory()) || !FileSystem.Instance.IsWritable(path))
                 {
@@ -197,10 +197,10 @@ namespace NitroxLauncher
                 throw new Exception("Location of Subnautica is unknown. Set the path to it in settings.");
             }
 
-            if (PirateDetection.HasTriggered)
+            /* if (PirateDetection.HasTriggered)
             {
                 throw new Exception("Aarrr! Nitrox walked the plank :(");
-            }
+            }*/
 
 #if RELEASE
             if (Process.GetProcessesByName("Subnautica").Length > 0)
